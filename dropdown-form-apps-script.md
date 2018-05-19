@@ -8,7 +8,7 @@ Put up a sidebar in a Google Sheet. Give it month and year dropdowns. Transmit t
 
 * From Google Docs, choose `New` > `Google sheets` > `Blank spreadsheet`
 * Name sheet `DropdownToAppsScript1` (or whatever)
-A blankd sheet appears.
+A blank sheet appears.
 * Choose `Tools` > `Script editor`
 * Replace the code in `Code.gs` with the following:
 
