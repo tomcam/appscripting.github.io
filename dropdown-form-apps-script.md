@@ -3,6 +3,7 @@
 ### Goal
 Put up a sidebar in a Google Sheet. Give it month and year dropdowns. Transmit those values to Google Apps Script.
 
+
 ### Create a new spreadsheet
 
 * From Google Docs, choose `New` > `Google sheets` > `Blank spreadsheet`
