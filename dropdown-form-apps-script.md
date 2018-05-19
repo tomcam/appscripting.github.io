@@ -1,8 +1,9 @@
 ## Getting form values into Google Apps Script
 
-### Goal
-Put up a sidebar in a Google Sheet. Give it month and year dropdowns. Transmit those values to Google Apps Script.
-
+Adds a sidebar in a Google Sheet with a menu item named 'Tax report'. 
+'Tax report' contains month and year dropdowns. 
+Transmits those values to Google Apps Script after user clicks
+the OK button.
 
 ### Create a new spreadsheet
 
@@ -12,7 +13,7 @@ Put up a sidebar in a Google Sheet. Give it month and year dropdowns. Transmit t
 A blank sheet appears.
 
 * Choose `Tools` > `Script editor`
-* Replace the code in `Code.gs` with the following:
+* Replace the contents of `Code.gs` with the following:
 
 ```js
 /* Built-in function that runs automatically when spreadsheet is opened. */
@@ -41,7 +42,7 @@ function createForm() {
 /* When the user clicks the OK button in theForm.html, it calls
    a function on that form named sendFormValueForGs().
    Its purpose is to collect values entered on the form and call this function. 
-   Both functions can be called whatever you want. */
+   Both functions can be named whatever you want. */
 function receiveFormValues(month,year) {
   Logger.log("receiveDropdownValues() month: " + month + ". year: " + year);
 }
@@ -52,6 +53,12 @@ function receiveFormValues(month,year) {
 * Choose `File` > `New` > `Html file`
 
 * In the `Create File` dialog enter the filename as 'theForm'.
+You don't need to follow with '.html' because Apps Script supplies it for you.
+You can name it anything; Google's examples use 'index'.
+
+Note that because the calling the DOM via
+Javascript is used to obtain values, you don't
+need `<form>` tags.
 
 ```html
 <!DOCTYPE html>
@@ -114,6 +121,17 @@ An `Authorization required` dialog appears.
 * Sign into your Google account as required, and give it the permissions it asks for.
 
 * Return to your spreadsheet and refresh the web page.
+
+The menu named `Sidebar` appears, and inside it is the `Tax report` menu item.
+
+* From the `Sidebar` menu, choose `Tax report`.
+
+The sidebar appears after a moment. 
+
+* Choose a month and date from the sidebar, then click `OK`.
+
+When you review the execution log you'll see what values were chosen.
+
 
 
 
