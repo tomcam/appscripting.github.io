@@ -55,46 +55,46 @@ function receiveFormValues(month,year) {
 
 ```html
 <!DOCTYPE html>
-	<html>
-		<head>
-			<base target="_top">
-		</head>
-		<body>
-			<select id="month-dropdown">
-				<option value="0">January</option>
-				<option value="1">February</option>
-				<option value="2">March</option>
-				<option value="3">April</option>
-				<option value="4">May</option>
-				<option value="5">June</option>
-				<option value="6">July</option>
-				<option value="7">August</option>
-				<option value="8">September</option>
-				<option value="9">October</option>
-				<option value="10">November</option>
-				<option value="11">December</option>
-			</select> 
+<html>
+	<head>
+		<base target="_top">
+	</head>
+	<body>
+		<select id="month-dropdown">
+			<option value="0">January</option>
+			<option value="1">February</option>
+			<option value="2">March</option>
+			<option value="3">April</option>
+			<option value="4">May</option>
+			<option value="5">June</option>
+			<option value="6">July</option>
+			<option value="7">August</option>
+			<option value="8">September</option>
+			<option value="9">October</option>
+			<option value="10">November</option>
+			<option value="11">December</option>
+		</select> 
 
-			<select id="year-dropdown">
-				<option value="2014">2014</option>
-				<option value="2015">2015</option>
-				<option value="2016">2016</option>
-				<option value="2017">2017</option>
-				<option value="2018" selected>2018</option>
-				<option value="2019">2019</option>
-			</select> 
+		<select id="year-dropdown">
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018" selected>2018</option>
+			<option value="2019">2019</option>
+		</select> 
 
-			<input type="button" value="OK" onclick="sendFormValueForGs()" />    
-	
-			<script>
-				/* Collect values from the form controls. Send them back to the .gs code.  */
-				function sendFormValueForGs() {
-					var month=document.getElementById("month-dropdown").value;
-					var year=document.getElementById("year-dropdown").value;
-					google.script.run.receiveFormValues(month,year);
-				}
-			</script>  
-</body>
+		<input type="button" value="OK" onclick="sendFormValueForGs()" />    
+
+		<script>
+			/* Collect values from the form controls. Send them back to the .gs code.  */
+			function sendFormValueForGs() {
+				var month=document.getElementById("month-dropdown").value;
+				var year=document.getElementById("year-dropdown").value;
+				google.script.run.receiveFormValues(month,year);
+			}
+		</script>  
+	</body>
 </html>
 ```
 
