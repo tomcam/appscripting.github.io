@@ -128,6 +128,12 @@ The menu named `Sidebar` appears, and inside it is the `Tax report` menu item.
 
 * From the `Sidebar` menu, choose `Tax report`.
 
+You may be asked to give permissions here.
+
+![Screen shot of Authorization Required google apps script dialog](/assets/apps-script-authorization-required.png)
+
+apps-script-authorization-required.png
+
 The sidebar appears after a moment. 
 
 * Choose a month and date from the sidebar, then click `OK`.
