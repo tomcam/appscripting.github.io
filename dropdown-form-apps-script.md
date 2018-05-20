@@ -134,9 +134,14 @@ You may be asked to give permissions here.
 
 apps-script-authorization-required.png
 
-The sidebar appears after a moment. 
+The sidebar appears after a moment:
+
+![Screen shot of the sidebar form with dropdowns](/assets/sidebar-form.png)
 
 * Choose a month and date from the sidebar, then click `OK`.
+
+![Screen shot of the sidebar form with dropdowns](/assets/sidebar-dropdown.png)
+
 
 When you review the execution log you'll see what values were chosen.
 
