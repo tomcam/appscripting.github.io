@@ -11,15 +11,16 @@ The result will look like this:
 
 ![Screen shot of the sidebar form with dropdowns](/assets/sidebar-form.png)
 
-
 ### Create a new spreadsheet
 
-* From Google Docs, choose `New` > `Google sheets` > `Blank spreadsheet`
+* From Google Docs, choose **New** > **Google sheets** > **Blank spreadsheet**
 * Name sheet `DropdownToAppsScript1` (or whatever).
 
 A blank sheet appears.
 
-* Choose `Tools` > `Script editor`
+### Create code to build a mneu when the spreadsheet opens, 
+
+* Choose **Tools** > **Script editor**
 * Replace the contents of `Code.gs` with the following:
 
 ```js
@@ -27,7 +28,7 @@ A blank sheet appears.
 function onOpen() {
   SpreadsheetApp.getUi()
     /* Create a top-level menu right on Google Sheets. */
-    /* The mneu title 'Sidebar' has no special meaning. Feel free to replace it. */ 
+    /* The menu title 'Sidebar' has no special meaning. Feel free to replace it. */ 
     .createMenu('Sidebar')
     /* Menu item text is Tax report, and it runs the function named in the next param. */
     .addItem('Tax report', 'createForm')
@@ -53,6 +54,37 @@ function createForm() {
 function receiveFormValues(month,year) {
   Logger.log("receiveDropdownValues() month: " + month + ". year: " + year);
 }
+```
+
+`onOpen()` is an event that occurs when the spreadsheet loads or if the page is refreshed.
+
+The call to `SpreadsheetApp.getUi().createMenu('Sidebar')` creates a new menu named **Sidebar**
+at a peer level with the spreadsheet's other menus, such as **File** and **Edit**. You could call it
+something else; the name Sidebar has no special meaning.
+
+It is chained to the `addItem()` method, which creates the menu entry you will use
+to create the entries on the **Sidebar** menu. `Tax report` is the menu item
+you see, and `createForm` is a string representing the name of the function to be called
+after the user chooses **Tax report** on the **Sidebar** menu.
+
+```js
+SpreadsheetApp.getUi().createMenu('Sidebar').addItem('Tax report', 'createForm')
+```
+
+There's one more thing in the call chain, and that's the `addToUi()` method, which physically
+updates the web page with the menu item. So the full call is:
+
+```js
+SpreadsheetApp.getUi().createMenu('Sidebar').addItem('Tax report', 'createForm').addToUi();
+```
+
+For clarity and commenting the line is displayed like this:
+
+```js
+SpreadsheetApp.getUi()
+  .createMenu('Sidebar')
+  .addItem('Tax report', 'createForm')
+  .addToUi();
 ```
 
 * Save the Project. Name it `DropdownToAppsScriptValues` or whatever.
