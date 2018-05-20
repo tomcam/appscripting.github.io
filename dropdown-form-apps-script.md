@@ -1,9 +1,16 @@
 ## Getting form values into Google Apps Script
 
-Adds a sidebar in a Google Sheet with a menu item named 'Tax report'. 
-'Tax report' contains month and year dropdowns. 
-Transmits those values to Google Apps Script after user clicks
-the OK button.
+It's fairly easy to create a user interface in Google Apps using HTML, but
+obtaining form values is a bit of a challenge. And where does your UI go, anyway?
+In this example the spreadsheet adds a menu to Google Sheets, creates a menu
+item to add a sidebar to the spreadsheet, wait for user input, and
+use Javascript to obtain form values and send them back to Google Apps Script
+after the user clicks the OK button.
+
+The result will look like this:
+
+![Screen shot of the sidebar form with dropdowns](/assets/sidebar-form.png)
+
 
 ### Create a new spreadsheet
 
@@ -132,9 +139,7 @@ You may be asked to give permissions here.
 
 ![Screen shot of Authorization Required google apps script dialog](/assets/apps-script-authorization-required.png)
 
-The sidebar appears after a moment:
-
-![Screen shot of the sidebar form with dropdowns](/assets/sidebar-form.png)
+The sidebar appears after a moment.
 
 * Choose a month and date from the sidebar, then click `OK`.
 
