@@ -124,6 +124,8 @@ An `Authorization required` dialog appears.
 
 The menu named `Sidebar` appears, and inside it is the `Tax report` menu item.
 
+![Screen shot of menu named Sidebar generated with google apps script createmenu API](/assets/apps-script-createmenu.png)
+
 * From the `Sidebar` menu, choose `Tax report`.
 
 The sidebar appears after a moment. 
