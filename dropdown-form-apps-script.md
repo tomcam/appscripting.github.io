@@ -132,8 +132,6 @@ You may be asked to give permissions here.
 
 ![Screen shot of Authorization Required google apps script dialog](/assets/apps-script-authorization-required.png)
 
-apps-script-authorization-required.png
-
 The sidebar appears after a moment:
 
 ![Screen shot of the sidebar form with dropdowns](/assets/sidebar-form.png)
