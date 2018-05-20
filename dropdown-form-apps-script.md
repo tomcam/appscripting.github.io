@@ -18,7 +18,7 @@ The result will look like this:
 
 A blank sheet appears.
 
-### Create code to build a mneu when the spreadsheet opens, 
+### Create code to build a mneu when the spreadsheet opens 
 
 * Choose **Tools** > **Script editor**
 * Replace the contents of `Code.gs` with the following:
@@ -56,6 +56,8 @@ function receiveFormValues(month,year) {
 }
 ```
 
+### onOpen() runs whene the spreadsheet loads and is good for initializing
+
 `onOpen()` is an event that occurs when the spreadsheet loads or if the page is refreshed.
 
 The call to `SpreadsheetApp.getUi().createMenu('Sidebar')` creates a new menu named **Sidebar**
@@ -86,6 +88,14 @@ SpreadsheetApp.getUi()
   .addItem('Tax report', 'createForm')
   .addToUi();
 ```
+
+### createForm() builds an HTML form using code
+
+The `Tax report` menu item calls a Google Apps Script API function 
+when the user selects it. We have decided to create a function
+called `createForm()`. You could give it any name but its 
+job is to create a user interface in HTML. It will be passed to
+the Google Apps Script API call `HtmlService.createHtmlOutputFromFile()`.
 
 * Save the Project. Name it `DropdownToAppsScriptValues` or whatever.
 
